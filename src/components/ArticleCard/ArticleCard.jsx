@@ -3,7 +3,7 @@ import style from "./style.module.css";
 export function ArticleCard(props) {
   const { title } = props;
 
-  const formatedTitle = title.slice(0, 80) + "...";
+  const formatedTitle = title.slice(0, 60) + "...";
 
   return (
     <article className={style["article"]}>
