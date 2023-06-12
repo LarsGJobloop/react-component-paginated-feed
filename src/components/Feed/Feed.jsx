@@ -11,8 +11,11 @@ import {
 /**
  * @description A paginated feed of articles
  *
- * @param {{className?: string, feedSize?: number}} props props object
- * @property {string} className Root element extra CSS classes
+ * @param {{
+ *  className?: string,
+ *  feedSize?: number
+ * }} props
+ * @property {string} className CSS classes for container element
  * @property {number} feedSize number of elements to display at once in feed
  */
 export function Feed(props) {
