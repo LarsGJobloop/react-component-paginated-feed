@@ -5,7 +5,7 @@ export function ArticleCard(props) {
     title
   } = props
 
-  const formatedTitle = title.slice(0, 100) + "...";
+  const formatedTitle = title.slice(0, 80) + "...";
 
   return (
     <article className={style["article"]}>
