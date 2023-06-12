@@ -1,27 +1,52 @@
 import style from "./style.module.css";
 
+import { useMemo, useState } from "react";
+
 import { ArticleCard } from "../ArticleCard/ArticleCard";
-import { getFeedPage } from "../../data/articles/articlesHandlers";
-import { useState } from "react";
+import {
+  getArticleCount,
+  getFeedPage,
+} from "../../data/articles/articlesHandlers";
 
 export function Feed(props) {
-  const { className } = props;
+  // The properties (props) we are using in this component
+  const {
+    className,
+    pageSize = 10,
+  } = props;
 
-  const [currentPage, setCurrentPage] = useState(0)
-  const currentArticles = getFeedPage(currentPage);
+  // React Hooks see link for full list
+  // https://react.dev/reference/react
+  const articleCount = useMemo(getArticleCount, []);
+  const [currentPage, setCurrentPage] = useState(0);
 
+  // Computed / Derived information
+  const currentArticles = getFeedPage(currentPage, pageSize);
+
+  // Event Handlers
   function nextPage() {
-    setCurrentPage(
-      (currentPage) => currentPage + 1
-    )
+    setCurrentPage((currentPage) => {
+      // Handle overflow
+      if (currentPage * pageSize >= articleCount - pageSize) {
+        return currentPage
+      } else {
+        return currentPage + 1;
+      }
+    });
   }
 
   function previousPage() {
-    setCurrentPage(
-      (currentPage) => currentPage - 1
-    )
+    setCurrentPage((currentPage) => {
+      // Handle underflow
+      if (currentPage <= 0) {
+        return 0;
+      } else {
+        return currentPage - 1;
+      }
+    });
   }
 
+  // The HTML (JSX)
   return (
     <div className={style["container"] + " " + className}>
       <header className={style["active-filter"]}>
