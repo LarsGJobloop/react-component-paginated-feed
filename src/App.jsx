@@ -6,10 +6,10 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { Banner } from "./components/Banner/Banner";
 import { Footer } from "./components/Footer/Footer";
 
-// Our basic feed
+// Our basic Feed
 import { Feed } from "./components/Feed/Feed";
 
-// Our Article (tailored generic) feed
+// Our Article (tailored generic) Feed
 import { ArticleFeed } from "./components/ArticleFeed/ArticleFeed";
 
 /**
