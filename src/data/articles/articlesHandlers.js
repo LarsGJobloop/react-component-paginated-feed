@@ -12,5 +12,7 @@ export function getFeedPage(pageNumber) {
   const start = pageNumber * sliceSize;
   const end = start + sliceSize;
 
+  console.log(`Fetching articles: ${start + 1} through ${end}`)
+
   return response.articles.slice(start, end);
 }
