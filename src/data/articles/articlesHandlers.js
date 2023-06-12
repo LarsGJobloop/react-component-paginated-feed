@@ -1,16 +1,16 @@
 import response from "./articlesData.json";
 
 /**
- * Get a slice from the articles array
- * @param {*} pageNumber
- * @returns
+ * Get slice of pageSize from the articles list
+ * @param {number} pageNumber
+ * The wanted page
+ * @param {number} pageSize
+ * The size of the pages
+ * @returns 
  */
-export function getFeedPage(pageNumber) {
-  // Sets the amount of articles returned
-  const sliceSize = 10;
-
-  const start = pageNumber * sliceSize;
-  const end = start + sliceSize;
+export function getFeedPage(pageNumber, pageSize) {
+  const start = pageNumber * pageSize;
+  const end = start + pageSize;
 
   console.log(`Fetching articles: ${start + 1} through ${end}`);
 
@@ -22,5 +22,7 @@ export function getFeedPage(pageNumber) {
  * @returns
  */
 export function getArticleCount() {
+  console.log("Querrying for total article count");
+
   return response.articles.length;
 }
