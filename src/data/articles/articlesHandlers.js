@@ -8,7 +8,7 @@ import response from "./articlesData.json";
  * The size of the pages
  * @returns 
  */
-export function getFeedPage(pageNumber, pageSize) {
+export function getArticleSlice(pageNumber, pageSize) {
   const start = pageNumber * pageSize;
   const end = start + pageSize;
 

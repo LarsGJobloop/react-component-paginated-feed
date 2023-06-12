@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { ArticleCard } from "../ArticleCard/ArticleCard";
 import {
   getArticleCount,
-  getFeedPage,
+  getArticleSlice,
 } from "../../data/articles/articlesHandlers";
 
 export function Feed(props) {
@@ -21,7 +21,7 @@ export function Feed(props) {
   const [currentPage, setCurrentPage] = useState(0);
 
   // Computed / Derived information
-  const currentArticles = getFeedPage(currentPage, feedSize);
+  const currentArticles = getArticleSlice(currentPage, feedSize);
 
   // Event Handlers
   function nextPage() {
