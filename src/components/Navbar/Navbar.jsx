@@ -1,15 +1,15 @@
-import cssClass from "./style.module.css";
+import style from "./style.module.css";
 
 export function Navbar(props) {
   const { className } = props;
 
   return (
-    <header className={cssClass["navbar"] + " " + className}>
-      <a href="/" className={cssClass["logo"]}>
+    <header className={style["navbar"] + " " + className}>
+      <a href="/" className={style["logo"]}>
         <img width={40} height={40} src="/favicon.svg" alt="site logo" />
       </a>
 
-      <nav className={cssClass["navigation-main"]}>
+      <nav className={style["navigation-main"]}>
         <ul>
           <li>
             <a href="">Home</a>
