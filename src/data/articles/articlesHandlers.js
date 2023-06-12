@@ -6,7 +6,6 @@ import response from "./articlesData.json";
  * The wanted page
  * @param {number} pageSize
  * The size of the pages
- * @returns 
  */
 export function getArticleSlice(pageNumber, pageSize) {
   const start = pageNumber * pageSize;
@@ -19,7 +18,6 @@ export function getArticleSlice(pageNumber, pageSize) {
 
 /**
  * Returns the total number of articles
- * @returns
  */
 export function getArticleCount() {
   console.log("Querrying for total article count");
