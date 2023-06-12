@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.2rem 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-main {
+  font-weight: 800;
+}
+
+.navigation-main > ul {
+  display: flex;
+  gap: 2rem;
+}

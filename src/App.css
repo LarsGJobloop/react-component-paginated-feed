@@ -1,0 +1,38 @@
+/* Layout */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App > main {
+  flex-grow: 1;
+}
+
+/* Theming */
+/* 
+ * For this setup we are only defining colors in here
+ * All the other CSS is "owned" by the component
+ */
+.navbar {
+  background-color: var(--color-secondary-500);
+  color: var(--color-gray-900);
+}
+
+.banner {
+  background-color: var(--color-primary-500);
+  color: var(--color-gray-100);
+}
+
+/* Make the main section and child(ren) use all available space */
+.App > main {
+  display: flex;
+}
+.App > main > * {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: var(--color-secondary-800);
+  color: var(--color-gray-100);
+}
