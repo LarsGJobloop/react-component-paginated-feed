@@ -32,13 +32,19 @@ import {
  * A feed for articles
  */
 function ArticleFeed(props) {
-  const { className } = props;
+  const {
+    feedCard,
+    getFeedLength,
+    getFeedPage,
+    ...rest
+  } = props;
+
   return (
     <FeedAltB
-      className={className}
       feedCard={ArticleCard}
       getFeedLength={getArticleCount}
       getFeedPage={getArticleSlice}
+      {...rest}
     />
   );
 }
