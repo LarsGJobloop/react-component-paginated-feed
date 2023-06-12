@@ -10,17 +10,14 @@ import {
 
 /**
  * @description A paginated feed of articles
- * 
+ *
  * @param {{className?: string, feedSize?: number}} props props object
  * @property {string} className Root element extra CSS classes
  * @property {number} feedSize number of elements to display at once in feed
  */
 export function Feed(props) {
   // The properties (props) we are using in this component
-  const {
-    className,
-    feedSize = 10,
-  } = props;
+  const { className, feedSize = 10 } = props;
 
   // React Hooks see link for full list
   // https://react.dev/reference/react
@@ -35,7 +32,7 @@ export function Feed(props) {
     setCurrentPage((currentPage) => {
       // Handle overflow
       if (currentPage * feedSize >= articleCount - feedSize) {
-        return currentPage
+        return currentPage;
       } else {
         return currentPage + 1;
       }

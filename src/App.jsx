@@ -21,7 +21,7 @@ import {
  * You'll likely want to take any generic component
  * and create a specific implementation
  * tailored for this project.
- * 
+ *
  * Done here by creating a thin wrapper around
  * the component and passing in the values
  * we want, limiting the options for the end user
@@ -32,7 +32,7 @@ import {
  * A feed for articles
  */
 function ArticleFeed(props) {
-  const {className} = props
+  const { className } = props;
   return (
     <FeedAltB
       className={className}
@@ -40,7 +40,7 @@ function ArticleFeed(props) {
       getFeedLength={getArticleCount}
       getFeedPage={getArticleSlice}
     />
-  )
+  );
 }
 
 /**
@@ -55,7 +55,6 @@ function App() {
       <main>
         <Feed />
         <ArticleFeed />
-        
       </main>
 
       <Footer className="footer" />

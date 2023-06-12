@@ -1,9 +1,7 @@
-import style from './style.module.css'
+import style from "./style.module.css";
 
 export function ArticleCard(props) {
-  const {
-    title
-  } = props
+  const { title } = props;
 
   const formatedTitle = title.slice(0, 80) + "...";
 
@@ -11,5 +9,5 @@ export function ArticleCard(props) {
     <article className={style["article"]}>
       <h1>{formatedTitle}</h1>
     </article>
-  )
+  );
 }
