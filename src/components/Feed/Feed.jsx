@@ -8,6 +8,14 @@ import {
   getArticleSlice,
 } from "../../data/articles/articlesHandlers";
 
+/**
+ * @description A paginated feed of articles
+ * 
+ * @param {{className?: string, feedSize?: number}} props props object
+ * @property {string} className Root element extra CSS classes
+ * @property {number} feedSize number of elements to display at once in feed
+ * @returns 
+ */
 export function Feed(props) {
   // The properties (props) we are using in this component
   const {
