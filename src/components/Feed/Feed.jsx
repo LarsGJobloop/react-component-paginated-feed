@@ -12,7 +12,7 @@ export function Feed(props) {
   // The properties (props) we are using in this component
   const {
     className,
-    pageSize = 10,
+    feedSize = 10,
   } = props;
 
   // React Hooks see link for full list
@@ -21,13 +21,13 @@ export function Feed(props) {
   const [currentPage, setCurrentPage] = useState(0);
 
   // Computed / Derived information
-  const currentArticles = getFeedPage(currentPage, pageSize);
+  const currentArticles = getFeedPage(currentPage, feedSize);
 
   // Event Handlers
   function nextPage() {
     setCurrentPage((currentPage) => {
       // Handle overflow
-      if (currentPage * pageSize >= articleCount - pageSize) {
+      if (currentPage * feedSize >= articleCount - feedSize) {
         return currentPage
       } else {
         return currentPage + 1;
