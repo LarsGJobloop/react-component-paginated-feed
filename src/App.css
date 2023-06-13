@@ -27,6 +27,7 @@
 /* Make the main section and child(ren) use all available space */
 .App > main {
   display: flex;
+  flex-direction: column;
 }
 .App > main > * {
   flex-grow: 1;
