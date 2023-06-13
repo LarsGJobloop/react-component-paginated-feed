@@ -26,9 +26,13 @@ export function Feed(props) {
   // https://react.dev/reference/react
   const articleCount = useMemo(getArticleCount, []);
   const [currentPage, setCurrentPage] = useState(0);
+  const currentArticles = useMemo(
+    () => getArticleSlice(currentPage, feedSize),
+    [currentPage]
+  );
 
-  // Computed / Derived information
-  const currentArticles = getArticleSlice(currentPage, feedSize);
+  // Computed / Derived variables
+  const totalPages = (articleCount - feedSize) / feedSize;
 
   // Event Handlers
   function nextPage() {
@@ -53,6 +57,14 @@ export function Feed(props) {
     });
   }
 
+  function firstPage() {
+    setCurrentPage(0);
+  }
+
+  function lastPage() {
+    setCurrentPage(totalPages);
+  }
+
   // The HTML (JSX)
   return (
     <div className={style["container"] + " " + className}>
@@ -71,9 +83,42 @@ export function Feed(props) {
       </ul>
 
       <nav className={style["controls"]}>
+        <button onClick={firstPage}>First</button>
         <button onClick={previousPage}>Previous</button>
+        <PageDisplay
+          setCurrentPage={setCurrentPage}
+          totalPages={totalPages}
+          currentPage={currentPage}
+        />
         <button onClick={nextPage}>Next</button>
+        <button onClick={lastPage}>Last</button>
       </nav>
     </div>
+  );
+}
+
+function PageDisplay(props) {
+  const { totalPages, currentPage, setCurrentPage } = props;
+  const pages = Array.from(Array(totalPages + 1).keys());
+
+  function handleClick(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
+
+  return (
+    <ul className={style["pages"]}>
+      {pages.map((pageNumber) => {
+        return (
+          <li
+            className={pageNumber === currentPage ? style["current-page"] : ""}
+            key={pageNumber}
+          >
+            <button onClick={() => handleClick(pageNumber)}>
+              {pageNumber + 1}
+            </button>
+          </li>
+        );
+      })}
+    </ul>
   );
 }

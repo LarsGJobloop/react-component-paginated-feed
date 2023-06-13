@@ -15,17 +15,46 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  margin: 0.5rem 0px;
 }
 
 .controls {
   display: flex;
   justify-content: space-around;
-
-  background-color: coral;
 }
+
 .controls > * {
   padding: 1rem 2rem;
   border-radius: 20px;
 
   font-size: larger;
+}
+
+.controls > button {
+  background-color: var(--color-primary-600);
+  color: white;
+
+  cursor: pointer;
+}
+
+.pages {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.pages > li > button {
+  background-color: var(--color-primary-600);
+  color: white;
+
+  font-size: x-large;
+
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.current-page {
+  background-color: var(--color-primary-400) !important;
 }
