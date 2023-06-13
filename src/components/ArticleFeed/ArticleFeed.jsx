@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 
 import { FeedAltB } from "../FeedAltB/FeedAltB";
-import { ArticleCard } from "../ArticleCard/ArticleCard";
+import { ArticleCardAltB as ArticleCard } from "../ArticleCardAltB/ArticleCardAltB";
 import {
   getArticleSlice,
   getArticleCount,

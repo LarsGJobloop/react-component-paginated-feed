@@ -34,7 +34,7 @@ export function FeedAltB(props) {
   const [currentPage, setCurrentPage] = useState(0);
 
   // Computed / Derived information
-  const currentArticles = getFeedPage(currentPage, feedSize);
+  const currentArticles = useMemo(() => getFeedPage(currentPage, feedSize), [currentPage]);
 
   // Event Handlers
   function nextPage() {

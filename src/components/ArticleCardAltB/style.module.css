@@ -1,0 +1,64 @@
+.article {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+
+  min-height: 7.5rem;
+
+  background-color: var(--color-primary-300);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bio {
+  display: flex;
+}
+
+.bio > img {
+  border-radius: 99999px;
+}
+
+.bio > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.updatedAt {
+  display: block;
+}
+
+.favorites {
+  background-color: var(--color-accent-600);
+  color: white;
+
+  border: none;
+  padding: .2rem .6rem;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.favorites > span {
+  color: transparent;  
+  text-shadow: 0 0 0 white;
+}
+
+.main {
+  margin: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-box {
+  display: flex;
+  gap: 1rem;
+}
+.tag-pill {
+  background-color: var(--color-gray-300);
+}
