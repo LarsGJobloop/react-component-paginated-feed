@@ -22,7 +22,7 @@ function App() {
       <Banner className="banner" />
 
       <main>
-        {/* <Feed /> */}
+        <Feed />
         <ArticleFeed />
       </main>
 
